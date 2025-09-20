@@ -1,7 +1,6 @@
 package ru.netology.db_hibernate.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.netology.db_hibernate.entity.Person;
 import ru.netology.db_hibernate.entity.PersonId;
