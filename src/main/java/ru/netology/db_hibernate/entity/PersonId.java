@@ -1,6 +1,5 @@
 package ru.netology.db_hibernate.entity;
 
-import jakarta.persistence.Embeddable;
 import lombok.*;
 
 import java.io.Serializable;
