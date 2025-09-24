@@ -29,7 +29,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("user").password(passwordEncoder().encode("password")).roles("USER");
+                .withUser("user").password(passwordEncoder().encode("password")).roles("USER")
+                .and()
+                .withUser("reader").password(passwordEncoder().encode("reader")).roles("READ")
+                .and()
+                .withUser("writer").password(passwordEncoder().encode("writer")).roles("WRITE")
+                .and()
+                .withUser("deleter").password(passwordEncoder().encode("deleter")).roles("DELETE")
+                .and()
+                .withUser("editor").password(passwordEncoder().encode("editor")).roles("READ", "WRITE")
+                .and()
+                .withUser("admin").password(passwordEncoder().encode("admin")).roles("READ", "WRITE", "DELETE");
     }
 
     @Bean
